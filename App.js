@@ -1,20 +1,30 @@
-import { StatusBar } from 'expo-status-bar';
-import {Image, StyleSheet, Text, View} from 'react-native';
+import {StatusBar} from 'expo-status-bar';
+import {Button, Image, StyleSheet, Text, View} from 'react-native';
+import BottomNav from "./component/BottomNav";
+import {useState} from "react";
 
 export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>sheeessssssh</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+    const [color, setColor] = useState(true)
+    return (
+        <View style={color ? styles.container : styles.test}>
+            <Button title={"test"} onPress={event => color ? setColor(false) : setColor(true)}/>
+            <BottomNav backgound={color}></BottomNav>
+        </View>
+
+    );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
+    container: {
+        flex: 1,
+        backgroundColor: '#86A3B8',
+        alignItems: 'flex-end',
+        flexDirection: "row",
+    },
+    test: {
+        flex: 1,
+        backgroundColor: '#FFFF',
+        alignItems: 'flex-end',
+        flexDirection: "row",
+    }
 });

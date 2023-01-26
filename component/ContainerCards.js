@@ -1,14 +1,22 @@
 ﻿import React from "react";
-import {StyleSheet, Text, View} from "react-native";
+import {StyleSheet, View,} from "react-native";
 import Cards from "./Cards";
 
-const ContainerCards = ({backgound}) => {
+const ContainerCards = () => {
+
+    function createCards() {
+        const cards = [];
+        for (let i = 0; i < 10; i++) {
+            cards.push(<Cards key={i}></Cards>);
+        }
+        return cards;
+    }
+
+
+
     return (
         <View style={styles.container}>
-            <Cards></Cards>
-            <Cards></Cards>
-            <Cards></Cards>
-            <Cards></Cards>
+            {createCards()}
         </View>
     );
 }
@@ -16,19 +24,12 @@ const ContainerCards = ({backgound}) => {
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: '#ffffff',
-        flexDirection: 'column',
-        justifyContent: 'space-between',
-        padding: 5,
-        borderRadius: 10,
+        backgroundColor: 'transparent',
+        flexDirection: 'row',
+        justifyContent: 'space-evenly',
+        margin: 20,
         flexWrap: 'wrap',
     },
-    // darkmode: {
-    //     flex: 1,
-    //     backgroundColor: '#000000',
-    //     flexDirection: 'column',
-    //     justifyContent: 'space-between',
-    // }
 })
 
 export default ContainerCards;

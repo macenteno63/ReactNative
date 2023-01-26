@@ -1,8 +1,26 @@
-﻿import React from "react";
-import {StyleSheet, View,} from "react-native";
+﻿import React, {useEffect, useState} from "react";
+import {StyleSheet, Text, View,} from "react-native";
 import Cards from "./Cards";
-
+import axios from "axios";
 const ContainerCards = () => {
+    const [recipes,setRecipes]=useState(null)
+// Fetch the recipes
+    const fetchMeal = async () => {
+        await axios({
+            method: "GET",
+            url: "https://www.themealdb.com/api/json/v1/1/search.php?f=a",
+        })
+            .then((res) => {
+                setRecipes(res.data.meals);
+            })
+            .catch((err) => {
+                console.log(err);
+            });
+    };
+
+    useEffect(() => {
+        fetchMeal();
+    },[recipes]);
 
     function createCards() {
         const cards = [];
@@ -16,7 +34,12 @@ const ContainerCards = () => {
 
     return (
         <View style={styles.container}>
-            {createCards()}
+            {/*{createCards()}*/}
+            {/*{recipes !== null && recipes.map((rec)=>{*/}
+            {/*    <Cards recipe={rec} key={rec.idMeal}></Cards>*/}
+            {/*})}*/}
+            {recipes !== null && <Cards recipe={recipes[0]}/>}
+            {recipes !== null && <Cards recipe={recipes[1]}/>}
         </View>
     );
 }

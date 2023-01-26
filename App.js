@@ -7,8 +7,8 @@ export default function App() {
     return (
         <SafeAreaView style={styles.container}>
             <ScrollView>
-                <TopLayer></TopLayer>
-                <ContainerCards></ContainerCards>
+                <TopLayer/>
+                <ContainerCards/>
             </ScrollView>
         </SafeAreaView>
     );

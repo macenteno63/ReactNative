@@ -2,12 +2,12 @@
 import {StyleSheet, Text, View, Image} from "react-native";
 import DifficultyAndTime from "./DifficultyAndTime";
 
-const Cards = ({backgound}) => {
+const Cards = ({recipe}) => {
     return (
         <View style={styles.container}>
             <Image source={require('../assets/pateCarbo.jpg')} style={styles.image}/>
             <DifficultyAndTime/>
-            <Text style={styles.text}>Pate Carbo</Text>
+            <Text style={styles.text}>{recipe.strMeal}</Text>
             <Text style={styles.difficulty}>Easy</Text>
             <Text style={styles.time}>20 min</Text>
         </View>

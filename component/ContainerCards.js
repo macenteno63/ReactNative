@@ -2,6 +2,7 @@
 import {StyleSheet, Text, View,} from "react-native";
 import Cards from "./Cards";
 import axios from "axios";
+import cards from "./Cards";
 const ContainerCards = () => {
     const [recipes,setRecipes]=useState(null)
 // Fetch the recipes
@@ -23,11 +24,11 @@ const ContainerCards = () => {
     },[recipes]);
 
     function createCards() {
-        const cards = [];
-        for (let i = 0; i < 10; i++) {
-            cards.push(<Cards key={i}></Cards>);
+        const cards = []
+        for (let i = 0; i < recipes.length; i++) {
+            cards.push(<Cards recipe={recipes[i]} key={i}></Cards>) ;
         }
-        return cards;
+        return cards
     }
 
 
@@ -38,8 +39,9 @@ const ContainerCards = () => {
             {/*{recipes !== null && recipes.map((rec)=>{*/}
             {/*    <Cards recipe={rec} key={rec.idMeal}></Cards>*/}
             {/*})}*/}
-            {recipes !== null && <Cards recipe={recipes[0]}/>}
-            {recipes !== null && <Cards recipe={recipes[1]}/>}
+            {/*{recipes !== null && <Cards recipe={recipes[0]}/>}*/}
+            {/*{recipes !== null && <Cards recipe={recipes[1]}/>}*/}
+            {recipes !== null && createCards()}
         </View>
     );
 }

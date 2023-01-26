@@ -1,10 +1,12 @@
 ﻿import React from "react";
 import {StyleSheet, Text, View, Image} from "react-native";
+import DifficultyAndTime from "./DifficultyAndTime";
 
 const Cards = ({backgound}) => {
     return (
-        <View style={backgound ? styles.container : styles.darkmode}>
+        <View style={styles.container}>
             <Image source={require('../assets/pateCarbo.jpg')} style={styles.image}/>
+            <DifficultyAndTime/>
             <Text style={styles.text}>Pate Carbo</Text>
             <Text style={styles.difficulty}>Easy</Text>
             <Text style={styles.time}>20 min</Text>
@@ -14,23 +16,27 @@ const Cards = ({backgound}) => {
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
         backgroundColor: '#ffffff',
-        flexDirection: 'row',
-        justifyContent: 'space-between',
         borderRadius: 10,
+        paddingBottom: 10,
+        margin: 10,
+        alignItems: 'center',
     },
-    // darkmode: {
-    //     flex: 1,
-    //     backgroundColor: '#000000',
-    //     flexDirection: 'row',
-    //     justifyContent: 'space-between',
-    //     borderRadius: 10,
-    // },
     image: {
-        width: 100,
+        width: 150,
         height: 100,
         borderRadius: 10,
+    },
+    text: {
+        alignSelf: 'flex-start',
+        fontWeight: 'bold',
+        paddingLeft: 10,
+        paddingTop: 5,
+    },
+    difficulty: {
+        alignSelf: 'flex-start',
+        paddingLeft: 10,
+        paddingTop: 5,
     },
 
 })

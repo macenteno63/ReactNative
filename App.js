@@ -1,13 +1,12 @@
-import {StyleSheet, View, SafeAreaView, Platform, ScrollView} from 'react-native';
-import TopLayer from "./component/TopLayer";
-import ContainerCards from "./component/ContainerCards";
+import {StyleSheet, SafeAreaView, Platform,} from 'react-native';
 import Navigation from "./Navigation/Navigation";
+import BottomNavigation from './Navigation/BottomNavigation';
 
 export default function App() {
 
     return (
         <SafeAreaView style={styles.container}>
-            <Navigation/>
+            <BottomNavigation/>
         </SafeAreaView>
     );
 }
@@ -15,7 +14,7 @@ export default function App() {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#D6E4E5',
+        backgroundColor: '#FFFFFF',
         paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
     },
 });

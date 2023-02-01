@@ -5,8 +5,8 @@ import DifficultyAndTime from "./DifficultyAndTime";
 const Cards = ({recipe}) => {
     return (
         <View style={styles.container}>
-            <Image source={require('../assets/pateCarbo.jpg')} style={styles.image}/>
-            <DifficultyAndTime/>
+            <Image source={{uri:recipe.strMealThumb}} style={styles.image}/>
+            {/* <DifficultyAndTime/> */}
             <Text style={styles.text}>{recipe.strMeal}</Text>
             <Text style={styles.difficulty}>Easy</Text>
             <Text style={styles.time}>20 min</Text>
@@ -21,6 +21,8 @@ const styles = StyleSheet.create({
         paddingBottom: 10,
         margin: 10,
         alignItems: 'center',
+        width: 150,
+        height: 250,
     },
     image: {
         width: 150,
@@ -30,8 +32,8 @@ const styles = StyleSheet.create({
     text: {
         alignSelf: 'flex-start',
         fontWeight: 'bold',
-        paddingLeft: 10,
         paddingTop: 5,
+        paddingHorizontal: 10,
     },
     difficulty: {
         alignSelf: 'flex-start',

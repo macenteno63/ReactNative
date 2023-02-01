@@ -1,15 +1,13 @@
 import {StyleSheet, View, SafeAreaView, Platform, ScrollView} from 'react-native';
 import TopLayer from "./component/TopLayer";
 import ContainerCards from "./component/ContainerCards";
+import Navigation from "./Navigation/Navigation";
 
 export default function App() {
 
     return (
         <SafeAreaView style={styles.container}>
-            <ScrollView>
-                <TopLayer/>
-                <ContainerCards/>
-            </ScrollView>
+            <Navigation/>
         </SafeAreaView>
     );
 }

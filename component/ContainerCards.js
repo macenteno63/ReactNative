@@ -1,9 +1,8 @@
 ﻿import React, {useEffect, useState} from "react";
-import {StyleSheet, Text, View,} from "react-native";
+import {StyleSheet, Text, TouchableOpacity, View,} from "react-native";
 import Cards from "./Cards";
 import axios from "axios";
-import cards from "./Cards";
-const ContainerCards = () => {
+const ContainerCards = ({navigation}) => {
     const [recipes,setRecipes]=useState(null)
 // Fetch the recipes
     const fetchMeal = async () => {
@@ -21,12 +20,16 @@ const ContainerCards = () => {
 
     useEffect(() => {
         fetchMeal();
-    },[recipes]);
+    },[]);
 
     function createCards() {
         const cards = []
         for (let i = 0; i < recipes.length; i++) {
-            cards.push(<Cards recipe={recipes[i]} key={i}></Cards>) ;
+            cards.push(
+                <TouchableOpacity onPress={()=> navigation.navigate("RecetteDetail", {"recipe":recipes[i]})}>
+                    <Cards recipe={recipes[i]} key={i}></Cards>
+                </TouchableOpacity>
+            );
         }
         return cards
     }
@@ -35,12 +38,6 @@ const ContainerCards = () => {
 
     return (
         <View style={styles.container}>
-            {/*{createCards()}*/}
-            {/*{recipes !== null && recipes.map((rec)=>{*/}
-            {/*    <Cards recipe={rec} key={rec.idMeal}></Cards>*/}
-            {/*})}*/}
-            {/*{recipes !== null && <Cards recipe={recipes[0]}/>}*/}
-            {/*{recipes !== null && <Cards recipe={recipes[1]}/>}*/}
             {recipes !== null && createCards()}
         </View>
     );

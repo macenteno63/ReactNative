@@ -1,9 +1,14 @@
 import React from 'react';
-import {Text} from "react-native";
+import {ScrollView, Text} from "react-native";
+import TopLayer from "./TopLayer";
+import ContainerCards from "./ContainerCards";
 
-const Home = () => {
+const Home = ({navigation}) => {
     return (
-        <Text>page home</Text>
+        <ScrollView>
+            <TopLayer/>
+            <ContainerCards navigation={navigation}/>
+        </ScrollView>
     );
 };
 

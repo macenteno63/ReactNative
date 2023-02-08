@@ -1,8 +1,13 @@
 ﻿import React from "react";
 import {StyleSheet, Text, View, Image} from "react-native";
 import DifficultyAndTime from "./DifficultyAndTime";
+import {isEmpty} from "../util";
 
 const Cards = ({recipe}) => {
+
+    function listIngredient(){
+            return <Text>{recipe.strIngredient1}</Text>
+    }
     return (
         <View style={styles.container}>
             <Image source={{uri:recipe.strMealThumb}} style={styles.image}/>

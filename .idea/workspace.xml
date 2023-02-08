@@ -4,7 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8fc1421f-b67a-4fec-b97c-119901ce3350" name="Changes" comment="création de la navigation, card touchable -&gt; CardDetail.js, affichage de quelques détail de la recette." />
+    <list default="true" id="8fc1421f-b67a-4fec-b97c-119901ce3350" name="Changes" comment="création de la navigation, card touchable -&gt; CardDetail.js, affichage de quelques détail de la recette.">
+      <change afterPath="$PROJECT_DIR$/reducer/recetteReducer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/util.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/component/CardDetail.js" beforeDir="false" afterPath="$PROJECT_DIR$/component/CardDetail.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/component/Cards.js" beforeDir="false" afterPath="$PROJECT_DIR$/component/Cards.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/component/ContainerCards.js" beforeDir="false" afterPath="$PROJECT_DIR$/component/ContainerCards.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -54,7 +65,9 @@
       <workItem from="1674479556092" duration="885000" />
       <workItem from="1674631332295" duration="4569000" />
       <workItem from="1674770725895" duration="224000" />
-      <workItem from="1675235283306" duration="6574000" />
+      <workItem from="1675235283306" duration="7003000" />
+      <workItem from="1675781384832" duration="4225000" />
+      <workItem from="1675840367677" duration="6269000" />
     </task>
     <task id="LOCAL-00001" summary="appelle à une api et affichage de 2 cards avec leur nom correspondant.&#10;Problème de requète infini">
       <created>1674770606921</created>

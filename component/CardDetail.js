@@ -1,6 +1,8 @@
 import React from 'react';
 import {FlatList, StyleSheet, Text, View} from "react-native";
 import {isEmpty} from "../util";
+import Cards from './Cards';
+import {ScrollView} from "react-native-gesture-handler";
 
 const CardDetail = ({route}) => {
     const recette = route.params.recipe
@@ -12,25 +14,29 @@ const CardDetail = ({route}) => {
             if (isEmpty(recette["strIngredient" +i]))
                 break;
             test= "strIngredient" + i
-            console.log(test)
             ingredient.push(recette["strIngredient" +i])
         }
         return ingredient;
     }
+
+    
+
     return (
-        <View>
-            <Text> nom: {recette.strMeal}</Text>
-            <Text>categorie : {recette.strCategory}</Text>
-            <Text>origine : {recette.strArea}</Text>
-            <Text>recette : {recette.strInstructions}</Text>
-            <Text style={styles.titre}>Voici la liste des ingrédients :</Text>
+        <ScrollView>
+            {/* <Cards recipe={recette} /> */}
+            {/* Refaire la carte */}
+            <Text>Nom: {recette.strMeal}</Text>
+            <Text>Categorie : {recette.strCategory}</Text>
+            <Text>Origine : {recette.strArea}</Text>
+            <Text>Recette : {recette.strInstructions}</Text>
+            <Text style={styles.titre}>Liste des ingrédients : </Text>
             <FlatList data={ingredient()} renderItem={({item}) => <Text>- {item}</Text>}/>
-        </View>
+        </ScrollView>
     );
 };
 const styles = StyleSheet.create({
     titre:{
         fontWeight: 'bold',
-    }
+    },
 })
 export default CardDetail;

@@ -3,6 +3,7 @@ import Navigation from "./Navigation/Navigation";
 import BottomNavigation from './Navigation/BottomNavigation';
 import {store} from "./store";
 import {Provider} from "react-redux";
+import { StatusBar } from 'expo-status-bar';
 
 export default function App() {
 

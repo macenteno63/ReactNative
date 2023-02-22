@@ -45,7 +45,7 @@ export const recetteReducer = createSlice({
 export const fetchRecette = () => {
     return (dispatch) => {
         return axios
-            .get('https://www.themealdb.com/api/json/v1/1/search.php?f=a')
+            .get('https://www.themealdb.com/api/json/v1/1/search.php?f=b')
             .then((res) => {
                 dispatch({ type: "recettes/getRecette", payload: res.data.meals });
             })

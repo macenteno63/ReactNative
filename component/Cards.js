@@ -18,9 +18,9 @@ const Cards = ({recipe}) => {
     return (
         <View style={styles.container}>
             <Image source={{uri:recipe.strMealThumb}} style={styles.image}/>
-            {/* <DifficultyAndTime/> */}
             <Text style={styles.text}>{recipe.strMeal}</Text>
             <Text style={styles.difficulty}>Easy</Text>
+            <DifficultyAndTime/>
             <Text style={styles.time}>20 min</Text>
             <Button title={"Fav"} onPress={()=> isFavori() ? dispatch(unFavori(recipe.idMeal)) : dispatch(addFavori(recipe.idMeal))}/>
             {isFavori() ? <Text>favori</Text> : <Text>pas favori</Text>}
@@ -52,6 +52,11 @@ const styles = StyleSheet.create({
     difficulty: {
         alignSelf: 'flex-start',
         paddingLeft: 10,
+        paddingTop: 5,
+    },
+    time: {
+        alignSelf: 'flex-end',
+        paddingRight: 10,
         paddingTop: 5,
     },
 

@@ -13,8 +13,14 @@ const DifficultyAndTime = () => {
 
 const styles = StyleSheet.create({
     clock: {
+        alignSelf: 'flex-start',
         width: 20,
         height: 20,
+    },
+    time: {
+        alignSelf: 'flex-end',
+        paddingRight: 10,
+        paddingTop: 5,
     },
 })
 

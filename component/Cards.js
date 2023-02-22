@@ -1,13 +1,20 @@
 ﻿import React from "react";
-import {StyleSheet, Text, View, Image} from "react-native";
+import {StyleSheet, Text, View, Image, Button} from "react-native";
 import DifficultyAndTime from "./DifficultyAndTime";
 import {isEmpty} from "../util";
+import {useDispatch, useSelector} from "react-redux";
+import {addFavori, unFavori} from "../reducer/recetteReducer";
 
 const Cards = ({recipe}) => {
-
+    const dispatch = useDispatch()
+    const favori = useSelector(state => state.recette.favori)
     function listIngredient(){
             return <Text>{recipe.strIngredient1}</Text>
     }
+    const isFavori = () => {
+        return favori.find((r) => r === recipe.idMeal) !== undefined;
+    }
+    console.log(favori)
     return (
         <View style={styles.container}>
             <Image source={{uri:recipe.strMealThumb}} style={styles.image}/>
@@ -15,6 +22,8 @@ const Cards = ({recipe}) => {
             <Text style={styles.text}>{recipe.strMeal}</Text>
             <Text style={styles.difficulty}>Easy</Text>
             <Text style={styles.time}>20 min</Text>
+            <Button title={"Fav"} onPress={()=> isFavori() ? dispatch(unFavori(recipe.idMeal)) : dispatch(addFavori(recipe.idMeal))}/>
+            {isFavori() ? <Text>favori</Text> : <Text>pas favori</Text>}
         </View>
     );
 }

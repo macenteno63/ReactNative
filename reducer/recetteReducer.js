@@ -27,10 +27,17 @@ export const recetteReducer = createSlice({
     name: "recettes",
     initialState: {
         recettes: null,
+        favori: [],
     },
     reducers: {
         getRecette:(state, action)=>{
             state.recettes=action.payload
+        },
+        addFavori: (state,action)=>{
+            state.favori.push(action.payload);
+        },
+        unFavori:(state, action)=>{
+            state.favori = state.favori.filter(r => r !== action.payload)
         }
 
     },
@@ -45,4 +52,4 @@ export const fetchRecette = () => {
             .catch((err) => console.log(err))
     };
 };
-export const { getRecette } = recetteReducer.actions.getRecette();
+export const { getRecette, addFavori, unFavori } = recetteReducer.actions;

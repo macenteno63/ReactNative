@@ -1,10 +1,11 @@
 ﻿import React from "react";
-import {StyleSheet, Text, View, Image, Button} from "react-native";
+import {StyleSheet, Text, View, Image, Button, TouchableOpacity} from "react-native";
 import DifficultyAndTime from "./DifficultyAndTime";
 import {isEmpty} from "../util";
 import {useDispatch, useSelector} from "react-redux";
 import {addFavori, unFavori} from "../reducer/recetteReducer";
-import { TouchableOpacity } from "react-native-gesture-handler";
+import StarIcon from '@mui/icons-material/Star';
+import StarBorderIcon from '@mui/icons-material/StarBorder';
 
 const Cards = ({recipe}) => {
     const dispatch = useDispatch()
@@ -14,23 +15,20 @@ const Cards = ({recipe}) => {
             return <Text>{recipe.strIngredient1}</Text>
     }
     const isFavori = () => {
-        return favori.find((r) => r === recipe.idMeal) !== undefined;
+        return favori.find((r) => r.idMeal === recipe.idMeal) !== undefined;
     }
     return (
         <View style={styles.container}>
             <Image source={{uri:recipe.strMealThumb}} style={styles.image}/>
-            <Text style={styles.titre}>{recipe.strMeal}</Text>
-            <Button title={"Fav"} onPress={()=> isFavori() ? dispatch(unFavori(recipe.idMeal)) : dispatch(addFavori(recipe.idMeal))}/>
-            <TouchableOpacity
-                onPress={() => isFavori() ? dispatch(unFavori(recipe.idMeal)) : dispatch(addFavori(recipe.idMeal))}
-                
-            >
-                <Image source={
-                    isFavori() ? require('../assets/favori.png') : require('../assets/nonFavori.png')
-                }/>
+            <Text style={styles.text}>{recipe.strMeal}</Text>
+            <Text style={styles.difficulty}>Easy</Text>
+            <DifficultyAndTime/>
+            <Text style={styles.time}>20 min</Text>
+            {/*<Button title={"Fav"} onPress={()=> isFavori() ? dispatch(unFavori(recipe.idMeal)) : dispatch(addFavori(recipe.idMeal))}/>*/}
+            <TouchableOpacity onPress={()=> isFavori() ? dispatch(unFavori(recipe.idMeal)) : dispatch(addFavori(recipe))}>
+                {isFavori() ? <StarIcon/> : <StarBorderIcon/>}
             </TouchableOpacity>
-            {/* <DifficultyAndTime difficulty={recipe.strCategory} time={recipe.strArea}/> */}
-            <DifficultyAndTime />
+            {isFavori() ? <Text>favori</Text> : <Text>pas favori</Text>}
         </View>
     );
 }

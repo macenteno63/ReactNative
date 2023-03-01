@@ -6,7 +6,6 @@ import {useSelector} from "react-redux";
 const ContainerCards = ({navigation}) => {
     // const [recipes,setRecipes]=useState(null)
     const recipes = useSelector(state => state.recette.recettes)
-    console.log(recipes)
 // Fetch the recipes
 //     const fetchMeal = async () => {
 //         await axios({
@@ -36,8 +35,6 @@ const ContainerCards = ({navigation}) => {
         }
         return cards
     }
-
-
 
     return (
         <View style={styles.container}>

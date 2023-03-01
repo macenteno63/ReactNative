@@ -1,26 +1,28 @@
-﻿import { View, Image, StyleSheet } from "react-native";
-
+﻿import { View, Image, StyleSheet, Text } from "react-native";
+import Time from "./Time";
 
 
 const DifficultyAndTime = () => {
 
     return (
-        <View>
-            <Image source={require('../assets/clockBlack.svg')} style={styles.clock} />
+        <View style={styles.container}>
+            <Text style={styles.difficulty}>Easy</Text>
+            <Time />
         </View>
     );
 }
 
 const styles = StyleSheet.create({
-    clock: {
-        alignSelf: 'flex-start',
-        width: 20,
-        height: 20,
+    container: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        marginHorizontal: 5,
     },
-    time: {
-        alignSelf: 'flex-end',
-        paddingRight: 10,
-        paddingTop: 5,
+    difficulty: {
+        fontStyle: 'italic',
+        alignSelf: 'flex-start',
+        marginTop: 5,
     },
 })
 

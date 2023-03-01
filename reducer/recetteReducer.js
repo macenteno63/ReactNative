@@ -42,6 +42,7 @@ export const recetteReducer = createSlice({
 
     },
 });
+
 export const fetchRecette = () => {
     return (dispatch) => {
         return axios

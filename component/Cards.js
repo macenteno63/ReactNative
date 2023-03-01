@@ -1,11 +1,9 @@
 ﻿import React from "react";
 import {StyleSheet, Text, View, Image, Button, TouchableOpacity} from "react-native";
 import DifficultyAndTime from "./DifficultyAndTime";
-import {isEmpty} from "../util";
 import {useDispatch, useSelector} from "react-redux";
 import {addFavori, unFavori} from "../reducer/recetteReducer";
-import StarIcon from '@mui/icons-material/Star';
-import StarBorderIcon from '@mui/icons-material/StarBorder';
+import FontAwesome from "react-native-vector-icons/FontAwesome";
 
 const Cards = ({recipe}) => {
     const dispatch = useDispatch()
@@ -14,24 +12,42 @@ const Cards = ({recipe}) => {
     function listIngredient(){
             return <Text>{recipe.strIngredient1}</Text>
     }
+
+    
+    /**
+     * If the recipe is in the favorites array, return true, otherwise return false.
+     * @returns The function isFavori is returning a boolean value.
+     */
     const isFavori = () => {
         return favori.find((r) => r.idMeal === recipe.idMeal) !== undefined;
     }
+
+
     return (
         <View style={styles.container}>
             <Image source={{uri:recipe.strMealThumb}} style={styles.image}/>
-            <Text style={styles.text}>{recipe.strMeal}</Text>
-            <Text style={styles.difficulty}>Easy</Text>
+            <Text style={styles.titre}>{recipe.strMeal}</Text>
             <DifficultyAndTime/>
-            <Text style={styles.time}>20 min</Text>
-            {/*<Button title={"Fav"} onPress={()=> isFavori() ? dispatch(unFavori(recipe.idMeal)) : dispatch(addFavori(recipe.idMeal))}/>*/}
-            <TouchableOpacity onPress={()=> isFavori() ? dispatch(unFavori(recipe.idMeal)) : dispatch(addFavori(recipe))}>
-                {isFavori() ? <StarIcon/> : <StarBorderIcon/>}
+            <TouchableOpacity onPress={()=> isFavori() ? dispatch(unFavori(recipe.idMeal)) : dispatch(addFavori(recipe))}  style={styles.star}>
+                {isFavori() ? <StarIcon /> : <EmptyStarIcon />}
             </TouchableOpacity>
-            {isFavori() ? <Text>favori</Text> : <Text>pas favori</Text>}
         </View>
     );
 }
+
+
+
+
+function StarIcon() {
+    return <FontAwesome size={30} name={"star"}/>;
+}
+
+
+function EmptyStarIcon() {
+    return <FontAwesome size={30} name={"star-o"}/>;
+}
+
+
 
 const styles = StyleSheet.create({
     container: {
@@ -55,10 +71,10 @@ const styles = StyleSheet.create({
         marginTop: 5,
         marginHorizontal: 5,
     },
-    time: {
+    star: {
         alignSelf: 'flex-end',
+        marginHorizontal: 5,
     },
-
 })
 
 export default Cards;

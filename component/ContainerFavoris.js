@@ -2,8 +2,11 @@ import {StyleSheet, Text, TouchableOpacity, View} from "react-native";
 import {useSelector} from "react-redux";
 import Cards from "./Cards";
 
-const ContainerFavoris = () => {
+const ContainerFavoris = (navigation) => {
+
     const favoris = useSelector(state => state.recette.favori)
+    
+    
     function createCards() {
         const cards = []
         for (let i = 0; i < favoris.length; i++) {
@@ -15,6 +18,7 @@ const ContainerFavoris = () => {
         }
         return cards
     }
+    
     return (
         <View style={styles.container}>
             {favoris !== null && createCards()}

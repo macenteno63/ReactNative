@@ -1,21 +1,25 @@
 ﻿import { View, Image, StyleSheet, Text } from "react-native";
+import FontAwesome from "react-native-vector-icons/FontAwesome";
+import { EvilIcons } from '@expo/vector-icons';
+
 
 
 const Time = () => {
 
     return (
         <View style={styles.container}>
-            <Image source={require('../assets/clockBlack.png')} style={styles.clock} />
+            <EvilIcons name="clock" size={24} color="black"/>
             <Text>30 min</Text>
         </View>
     );
 }
 
+
+function ClockIcon() {
+    return <FontAwesome size={30} name={"clock-circle-o"}/>;
+}
+
 const styles = StyleSheet.create({
-    clock: {
-        width: 20,
-        height: 20,
-    },
     container: {
         flexDirection: 'row',
         alignItems: 'flex-end',

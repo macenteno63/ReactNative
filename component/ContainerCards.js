@@ -1,28 +1,13 @@
 ﻿import React, {useEffect, useState} from "react";
-import {StyleSheet, Text, TouchableOpacity, View,} from "react-native";
+import {StyleSheet, Text, TouchableOpacity, View, Appearance, FlatList, useColorScheme} from "react-native";
 import Cards from "./Cards";
-import axios from "axios";
-import {useSelector} from "react-redux";
-const ContainerCards = ({navigation}) => {
-    // const [recipes,setRecipes]=useState(null)
-    const recipes = useSelector(state => state.recette.recettes)
-// Fetch the recipes
-//     const fetchMeal = async () => {
-//         await axios({
-//             method: "GET",
-//             url: "https://www.themealdb.com/api/json/v1/1/search.php?f=a",
-//         })
-//             .then((res) => {
-//                 setRecipes(res.data.meals);
-//             })
-//             .catch((err) => {
-//                 console.log(err);
-//             });
-//     };
-//
-//     useEffect(() => {
-//         fetchMeal();
-//     },[]);
+const ContainerCards = ({navigation,recipes}) => {
+    const colorScheme = useColorScheme();
+    const [backgound, setBackgound] = useState(colorScheme === 'dark' ? 'dark' : 'transparent');
+    Appearance.addChangeListener((scheme)=>{
+        scheme.colorScheme === 'dark' ? setBackgound('black') :setBackgound('transparent')
+        console.log(scheme)
+    })
 
     function createCards() {
         const cards = []
@@ -37,8 +22,9 @@ const ContainerCards = ({navigation}) => {
     }
 
     return (
-        <View style={styles.container}>
+        <View style={[styles.container, {backgroundColor: backgound}]}>
             {recipes !== null && createCards()}
+            {/*<FlatList data={recipes} renderItem={(item)}*/}
         </View>
     );
 }
@@ -46,7 +32,7 @@ const ContainerCards = ({navigation}) => {
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: 'transparent',
+        // backgroundColor: 'transparent',
         flexDirection: 'row',
         justifyContent: 'space-evenly',
         margin: 20,

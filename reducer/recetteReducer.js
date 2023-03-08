@@ -1,27 +1,5 @@
 import {createSlice} from "@reduxjs/toolkit";
 import axios from "axios";
-// export const recetteReducer = createSlice({
-//     name: "recettes",
-//     initialState: {
-//         recettes: null,
-//     },
-//     reducers: {
-//         getRecette:{
-//             reducer: (state, action) => {
-//                 state.recettes=action.payload
-//             },
-//             prepare: ()=>{
-//                 return axios
-//                     .get('https://www.themealdb.com/api/json/v1/1/search.php?f=a')
-//                     .then((res) => {
-//                         console.log(res.data)
-//                         return { payload: res.data }
-//                     })
-//                     .catch((err) => console.log(err))
-//             }
-//         }
-//     },
-// });
 
 export const recetteReducer = createSlice({
     name: "recettes",

@@ -11,7 +11,6 @@ export default function App() {
         <Provider store={store}>
             <SafeAreaView style={styles.container}>
                 <BottomNavigation/>
-                {/*<Navigation></Navigation>*/}
             </SafeAreaView>
         </Provider>
     );

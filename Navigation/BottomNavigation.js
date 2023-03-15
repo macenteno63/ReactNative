@@ -25,7 +25,7 @@ const BottomNavigation = () => {
                 <BottomTabNavigator.Screen name={"Fav"} component={ContainerFavoris}
                                             options={{
                                                 title: 'Favoris',
-                                                tabBarIcon: ({color, size}) => <Fontisto name="favorite" size={size} color={color} />,
+                                                tabBarIcon: ({color, size}) => <Fontisto name="star" size={size} color={color} />,
                                             }}/>
                 <BottomTabNavigator.Screen name={"Research"} component={Research}
                                             options={{

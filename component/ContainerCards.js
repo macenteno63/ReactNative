@@ -1,4 +1,4 @@
-﻿import React, {useState} from "react";
+import React, {useState} from "react";
 import {StyleSheet,TouchableOpacity, View, Appearance,useColorScheme} from "react-native";
 import Cards from "./Cards";
 const ContainerCards = ({navigation,recipes}) => {
@@ -29,13 +29,12 @@ const ContainerCards = ({navigation,recipes}) => {
 
 
 const styles = StyleSheet.create({
-    container: {
-        // backgroundColor: 'transparent',
-        flexDirection: 'row',
-        justifyContent: 'space-evenly',
-        margin: 20,
-        flexWrap: 'wrap',
-    },
-})
+  container: {
+    flexDirection: "row",
+    justifyContent: "space-evenly",
+    margin: 20,
+    flexWrap: "wrap",
+  },
+});
 
 export default ContainerCards;

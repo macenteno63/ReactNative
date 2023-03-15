@@ -1,27 +1,8 @@
 import {createSlice} from "@reduxjs/toolkit";
 import axios from "axios";
-// export const recetteReducer = createSlice({
-//     name: "recettes",
-//     initialState: {
-//         recettes: null,
-//     },
-//     reducers: {
-//         getRecette:{
-//             reducer: (state, action) => {
-//                 state.recettes=action.payload
-//             },
-//             prepare: ()=>{
-//                 return axios
-//                     .get('https://www.themealdb.com/api/json/v1/1/search.php?f=a')
-//                     .then((res) => {
-//                         console.log(res.data)
-//                         return { payload: res.data }
-//                     })
-//                     .catch((err) => console.log(err))
-//             }
-//         }
-//     },
-// });
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import {storeFavoriteRecette} from "../actions/actionsRecette";
+
 
 export const recetteReducer = createSlice({
     name: "recettes",
@@ -33,23 +14,18 @@ export const recetteReducer = createSlice({
         getRecette:(state, action)=>{
             state.recettes=action.payload
         },
+        getFavoris:(state,action)=>{
+           state.favori = action.payload
+        },
         addFavori: (state,action)=>{
             state.favori.push(action.payload);
+            storeFavoriteRecette(state.favori);
         },
         unFavori:(state, action)=>{
-            state.favori = state.favori.filter(r => r.idMeal !== action.payload)
+            state.favori = state.favori.filter(r => r.idMeal !== action.payload);
+            storeFavoriteRecette(state.favori);
         },
     },
 });
 
-export const fetchRecette = () => {
-    return (dispatch) => {
-        return axios
-            .get('https://www.themealdb.com/api/json/v1/1/search.php?f=b')
-            .then((res) => {
-                dispatch({ type: "recettes/getRecette", payload: res.data.meals });
-            })
-            .catch((err) => console.log(err))
-    };
-};
-export const { getRecette, addFavori, unFavori} = recetteReducer.actions;
+export const { getRecette, addFavori, unFavori,getFavoris} = recetteReducer.actions;

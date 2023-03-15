@@ -1,5 +1,5 @@
-﻿import React, {useEffect, useState} from "react";
-import {StyleSheet, Text, TouchableOpacity, View, Appearance, FlatList, useColorScheme} from "react-native";
+﻿import React, {useState} from "react";
+import {StyleSheet,TouchableOpacity, View, Appearance,useColorScheme} from "react-native";
 import Cards from "./Cards";
 const ContainerCards = ({navigation,recipes}) => {
     const colorScheme = useColorScheme();
@@ -8,7 +8,6 @@ const ContainerCards = ({navigation,recipes}) => {
         scheme.colorScheme === 'dark' ? setBackgound('black') :setBackgound('transparent')
         console.log(scheme)
     })
-
     function createCards() {
         const cards = []
         for (let i = 0; i < recipes.length; i++) {
@@ -20,7 +19,6 @@ const ContainerCards = ({navigation,recipes}) => {
         }
         return cards
     }
-
     return (
         <View style={[styles.container, {backgroundColor: backgound}]}>
             {recipes !== null && createCards()}

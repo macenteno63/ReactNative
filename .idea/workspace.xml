@@ -4,16 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8fc1421f-b67a-4fec-b97c-119901ce3350" name="Changes" comment="BottomNavigation.js to component favoris">
+    <list default="true" id="8fc1421f-b67a-4fec-b97c-119901ce3350" name="Changes" comment="Recherche fonctionnel + darkmode">
+      <change afterPath="$PROJECT_DIR$/actions/actionsRecette.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/component/Categorie.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.json" beforeDir="false" afterPath="$PROJECT_DIR$/app.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/component/ContainerCards.js" beforeDir="false" afterPath="$PROJECT_DIR$/component/ContainerCards.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/component/ContainerFavoris.js" beforeDir="false" afterPath="$PROJECT_DIR$/component/ContainerFavoris.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/component/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/component/Home.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/component/Research.js" beforeDir="false" afterPath="$PROJECT_DIR$/component/Research.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/reducer/recetteReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/reducer/recetteReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/store.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,7 +85,12 @@
       <workItem from="1677947305148" duration="1714000" />
       <workItem from="1677951494191" duration="1841000" />
       <workItem from="1678034910816" duration="200000" />
-      <workItem from="1678258943098" duration="6524000" />
+      <workItem from="1678258943098" duration="6845000" />
+      <workItem from="1678372025741" duration="41000" />
+      <workItem from="1678442064434" duration="680000" />
+      <workItem from="1678444279125" duration="1243000" />
+      <workItem from="1678540366568" duration="63000" />
+      <workItem from="1678863831169" duration="6302000" />
     </task>
     <task id="LOCAL-00001" summary="appelle à une api et affichage de 2 cards avec leur nom correspondant.&#10;Problème de requète infini">
       <created>1674770606921</created>
@@ -121,7 +127,14 @@
       <option name="project" value="LOCAL" />
       <updated>1677660991853</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Recherche fonctionnel + darkmode">
+      <created>1678265778781</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1678265778781</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -144,6 +157,7 @@
     <MESSAGE value="Affichage des ingrédients et création du store redux plus création de la première action et du premier reducer." />
     <MESSAGE value="ajouter au favoris et enlever des favoris" />
     <MESSAGE value="BottomNavigation.js to component favoris" />
-    <option name="LAST_COMMIT_MESSAGE" value="BottomNavigation.js to component favoris" />
+    <MESSAGE value="Recherche fonctionnel + darkmode" />
+    <option name="LAST_COMMIT_MESSAGE" value="Recherche fonctionnel + darkmode" />
   </component>
 </project>

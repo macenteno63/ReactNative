@@ -1,32 +1,47 @@
-import React, {useState} from "react";
-import {StyleSheet,TouchableOpacity, View, Appearance,useColorScheme} from "react-native";
+import React, { useState } from "react";
+import {
+  StyleSheet,
+  TouchableOpacity,
+  View,
+  Appearance,
+  useColorScheme,
+  FlatList,
+} from "react-native";
 import Cards from "./Cards";
-const ContainerCards = ({navigation,recipes}) => {
-    const colorScheme = useColorScheme();
-    const [backgound, setBackgound] = useState(colorScheme === 'dark' ? 'dark' : 'transparent');
-    Appearance.addChangeListener((scheme)=>{
-        scheme.colorScheme === 'dark' ? setBackgound('black') :setBackgound('transparent')
-        console.log(scheme)
-    })
-    function createCards() {
-        const cards = []
-        for (let i = 0; i < recipes.length; i++) {
-            cards.push(
-                <TouchableOpacity onPress={()=> navigation.navigate("RecetteDetail", {"recipe":recipes[i]})}>
-                    <Cards recipe={recipes[i]} key={i}></Cards>
-                </TouchableOpacity>
-            );
-        }
-        return cards
-    }
-    return (
-        <View style={[styles.container, {backgroundColor: backgound}]}>
-            {recipes !== null && createCards()}
-            {/*<FlatList data={recipes} renderItem={(item)}*/}
-        </View>
-    );
-}
+const ContainerCards = ({ navigation, recipes }) => {
+  const colorScheme = useColorScheme();
+  const [backgound, setBackgound] = useState(
+    colorScheme === "dark" ? "dark" : "transparent"
+  );
+  Appearance.addChangeListener((scheme) => {
+    scheme.colorScheme === "dark"
+      ? setBackgound("black")
+      : setBackgound("transparent");
+    console.log(scheme);
+  });
 
+  return (
+    <View style={[styles.container, { backgroundColor: backgound }]}>
+      {recipes !== null && (
+        <FlatList
+          data={recipes}
+          numColumns={2}
+          renderItem={({ item }) => (
+            <TouchableOpacity
+              onPress={() =>
+                navigation.navigate("RecetteDetail", { recipe: item })
+              }
+              style={styles.card}
+            >
+              <Cards recipe={item} />
+            </TouchableOpacity>
+          )}
+          keyExtractor={(_item, index) => index.toString()}
+        />
+      )}
+    </View>
+  );
+};
 
 const styles = StyleSheet.create({
   container: {

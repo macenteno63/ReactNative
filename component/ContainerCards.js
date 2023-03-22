@@ -8,20 +8,21 @@ import {
   FlatList,
 } from "react-native";
 import Cards from "./Cards";
+
 const ContainerCards = ({ navigation, recipes }) => {
   const colorScheme = useColorScheme();
-  const [backgound, setBackgound] = useState(
+  const [background, setBackground] = useState(
     colorScheme === "dark" ? "dark" : "transparent"
   );
   Appearance.addChangeListener((scheme) => {
     scheme.colorScheme === "dark"
-      ? setBackgound("black")
-      : setBackgound("transparent");
+      ? setBackground("black")
+      : setBackground("transparent");
     console.log(scheme);
   });
 
   return (
-    <View style={[styles.container, { backgroundColor: backgound }]}>
+    <View style={[styles.container, { backgroundColor: background }]}>
       {recipes !== null && (
         <FlatList
           data={recipes}

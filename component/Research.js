@@ -2,7 +2,6 @@ import {Button, ScrollView, TextInput, StyleSheet, View} from "react-native";
 import {useState} from "react";
 import {useSelector} from "react-redux";
 import ContainerCards from "./ContainerCards";
-import { View } from "react-native-web";
 
 const Research = ({navigation}) => {
     const [rech,setRech] = useState("");
@@ -13,11 +12,11 @@ const Research = ({navigation}) => {
         setResultat(recipes.filter(meal => meal.strMeal.includes(rech)))
     }
     return (
-        <View>
+        <ScrollView>
             <TextInput style={styles.research} placeholder={"Research meal "} onChangeText={(e)=> setRech(e)}></TextInput>
-            <Button title={"recherche"} onPress={()=> addResearch()}/>
+            <Button title={"Recherche"} onPress={()=> addResearch()}/>
             <ContainerCards navigation={navigation} recipes={resultat}/>
-        </View>
+        </ScrollView>
     );
 };
 const styles = StyleSheet.create({

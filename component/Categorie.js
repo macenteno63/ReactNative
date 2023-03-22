@@ -1,19 +1,23 @@
-import {StyleSheet, Text, TouchableOpacity, View} from "react-native";
+import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
-const Categorie = () => {
-    return (
-        <View style={styles.container}>
-            <TouchableOpacity onPress={()=> console.log("test")}>
-                <Text>vegetarian</Text>
-            </TouchableOpacity>
-        </View>
-    );
+const Categorie = ({ name, onPress }) => {
+  return (
+    <View style={styles.container}>
+      <TouchableOpacity onPress={onPress}>
+        <Text style={styles.text}>{name}</Text>
+      </TouchableOpacity>
+    </View>
+  );
 };
 const styles = StyleSheet.create({
-    container: {
-        borderRadius:2,
-        borderColor: "black",
-        borderWidth: 2,
-    },
-})
+  container: {
+    marginTop: 10,
+    borderRadius: 10,
+    backgroundColor: "black",
+    padding: 5,
+  },
+  text: {
+    color: "white",
+  },
+});
 export default Categorie;

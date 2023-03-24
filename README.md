@@ -9,7 +9,7 @@ Cette application mobile cross-plateforme a été réalisée en utilisant React 
 * **Ajout aux favoris:** Les utilisateurs peuvent ajouter leurs recettes préférées à leurs favoris pour y accéder facilement à tout moment.
 * **Consultation des détails de la recette:** Les utilisateurs peuvent voir les détails de chaque recette tels que la liste des ingrédients, les instructions de préparation et la photo.
 
-### Configuration requise
+### Configuration requise
 
 * npm
 * expo
@@ -29,3 +29,6 @@ Cette application mobile cross-plateforme a été réalisée en utilisant React 
 Cette application utilise l'API themealdb pour récupérer les données de recettes. Les instructions d'utilisation de l'API sont fournies sur https://www.themealdb.com/api.php.
 
 ### Contribution
+
+* **macenteno63**
+* **Feennrir**

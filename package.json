@@ -29,6 +29,7 @@
   },
   "dependencies": {
     "@emotion/styled": "^11.10.6",
+    "@expo/ngrok": "^4.1.0",
     "@expo/webpack-config": "^0.17.2",
     "@jest/globals": "^29.5.0",
     "@mui/icons-material": "^5.11.11",

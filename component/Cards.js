@@ -1,6 +1,6 @@
 ﻿import React from "react";
 import {StyleSheet, Text, View, Image, Button, TouchableOpacity} from "react-native";
-import DifficultyAndTime from "./DifficultyAndTime";
+import CategoryAndLocation from "./CategoryAndLocation";
 import {useDispatch, useSelector} from "react-redux";
 import {addFavori, unFavori} from "../reducer/recetteReducer";
 import FontAwesome from "react-native-vector-icons/FontAwesome";
@@ -9,9 +9,9 @@ const Cards = ({recipe}) => {
     const dispatch = useDispatch()
     const favori = useSelector(state => state.recette.favori)
 
-    function listIngredient(){
-            return <Text>{recipe.strIngredient1}</Text>
-    }
+    // function listIngredient(){
+    //         return <Text>{recipe.strIngredient1}</Text>
+    // }
 
     
     /**
@@ -27,7 +27,7 @@ const Cards = ({recipe}) => {
         <View style={styles.container}>
             <Image source={{uri:recipe.strMealThumb}} style={styles.image}/>
             <Text style={styles.titre}>{recipe.strMeal}</Text>
-            <DifficultyAndTime/>
+            <CategoryAndLocation recipe={recipe}/>
             <TouchableOpacity onPress={()=> isFavori() ? dispatch(unFavori(recipe.idMeal)) : dispatch(addFavori(recipe))}  style={styles.star}>
                 {isFavori() ? <StarIcon /> : <EmptyStarIcon />}
             </TouchableOpacity>

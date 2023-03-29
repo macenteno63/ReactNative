@@ -5,15 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8fc1421f-b67a-4fec-b97c-119901ce3350" name="Changes" comment="Recherche fonctionnel + darkmode">
-      <change afterPath="$PROJECT_DIR$/actions/actionsRecette.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/component/Categorie.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/__mocks__/@react-native-async-storage/async-storage.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/__tests__/actionAndReducerTest.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/component/ContainerCards.js" beforeDir="false" afterPath="$PROJECT_DIR$/component/ContainerCards.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/component/ContainerFavoris.js" beforeDir="false" afterPath="$PROJECT_DIR$/component/ContainerFavoris.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/component/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/component/Home.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/actions/actionsRecette.js" beforeDir="false" afterPath="$PROJECT_DIR$/actions/actionsRecette.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reducer/recetteReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/reducer/recetteReducer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/store.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -39,20 +36,42 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/macenteno/But2/scrabble-with-numbers&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/home/macenteno/But2/scrabble-with-numbers",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs.jest.jest_package": "/home/macenteno/But2/ReactNative/test/node_modules/jest",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
+  <component name="RunManager">
+    <configuration name="testActionReducer.should fecth recettes" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <jest-package value="$PROJECT_DIR$/node_modules/jest" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/__tests__/actionAndReducerTest.js" />
+      <test-names>
+        <test-name value="testActionReducer" />
+        <test-name value="should fecth recettes" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Jest.testActionReducer.should fecth recettes" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -90,7 +109,13 @@
       <workItem from="1678442064434" duration="680000" />
       <workItem from="1678444279125" duration="1243000" />
       <workItem from="1678540366568" duration="63000" />
-      <workItem from="1678863831169" duration="6302000" />
+      <workItem from="1678863831169" duration="6845000" />
+      <workItem from="1678962543481" duration="38000" />
+      <workItem from="1679326836596" duration="762000" />
+      <workItem from="1679337836639" duration="59000" />
+      <workItem from="1679476240428" duration="6598000" />
+      <workItem from="1679563596394" duration="430000" />
+      <workItem from="1680069910708" duration="6416000" />
     </task>
     <task id="LOCAL-00001" summary="appelle à une api et affichage de 2 cards avec leur nom correspondant.&#10;Problème de requète infini">
       <created>1674770606921</created>

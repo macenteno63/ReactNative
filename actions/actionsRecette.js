@@ -12,6 +12,14 @@ export const fetchRecette = () => {
             .catch((err) => console.log(err))
     };
 };
+export const fetchApi = () => {
+    return axios
+        .get('https://www.themealdb.com/api/json/v1/1/search.php?f=b')
+        .then((res) => {
+            return res.data.meals
+        })
+        .catch((err) => console.log(err))
+}
 export const storeFavoriteRecette = async (recettesFavoris) => {
     try {
         const jsonRecette = JSON.stringify(recettesFavoris)

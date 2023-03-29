@@ -7,4 +7,4 @@ export const store = configureStore({
         recette : recetteReducer.reducer,
     },
 })
-store.dispatch(fetchRecette())
+store.dispatch(fetchRecette());

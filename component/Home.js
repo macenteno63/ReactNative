@@ -15,7 +15,7 @@ const Home = ({ navigation }) => {
   );
 
   return (
-    <ScrollView>
+    <View>
       <TopLayer />
       <View style={styles.container}>
         <Categorie name="All" onPress={() => setSelectedCategory(null)} />
@@ -30,7 +30,7 @@ const Home = ({ navigation }) => {
         <Categorie name="Beef" onPress={() => setSelectedCategory("Beef")} />
       </View>
       <ContainerCards navigation={navigation} recipes={filteredRecipes} />
-    </ScrollView>
+    </View>
   );
 };
 const styles = StyleSheet.create({

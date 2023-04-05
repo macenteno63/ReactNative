@@ -16,7 +16,7 @@ const BottomNavigation = () => {
     return (
         <NavigationContainer>
             <BottomTabNavigator.Navigator initialRouteName="Home">
-                <BottomTabNavigator.Screen name="Home" component={Navigation} 
+                <BottomTabNavigator.Screen name="Homee" component={Navigation}
                                            options={{
                                                 headerShown: false,
                                                 title: 'Home',

@@ -1,6 +1,4 @@
 import {createSlice} from "@reduxjs/toolkit";
-import axios from "axios";
-import AsyncStorage from '@react-native-async-storage/async-storage';
 import {storeFavoriteRecette} from "../actions/actionsRecette";
 
 
@@ -12,7 +10,10 @@ export const recetteReducer = createSlice({
     },
     reducers: {
         getRecette:(state, action)=>{
-            state.recettes=action.payload
+            if(state.recettes === null)
+                state.recettes=action.payload
+            else
+                state.recettes=[...state.recettes,...action.payload]
         },
         getFavoris:(state,action)=>{
            state.favori = action.payload
@@ -25,7 +26,10 @@ export const recetteReducer = createSlice({
             state.favori = state.favori.filter(r => r.idMeal !== action.payload);
             storeFavoriteRecette(state.favori);
         },
+        // clean:(state,action)=>{
+        //     state.recettes = state.recettes.slice(0,5)
+        // }
     },
 });
 
-export const { getRecette, addFavori, unFavori,getFavoris} = recetteReducer.actions;
+export const { getRecette, addFavori, unFavori,getFavoris,clean} = recetteReducer.actions;

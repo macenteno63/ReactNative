@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, {useEffect, useState} from "react";
 import {
   StyleSheet,
   TouchableOpacity,
@@ -8,9 +8,13 @@ import {
   FlatList,
 } from "react-native";
 import Cards from "./Cards";
+import {fetchRecette} from "../actions/actionsRecette";
+import {useDispatch} from "react-redux";
 
 const ContainerCards = ({ navigation, recipes }) => {
   const colorScheme = useColorScheme();
+  const dispatch = useDispatch()
+  const [cpt,setCpt] = useState(0)
   const [background, setBackground] = useState(
     colorScheme === "dark" ? "dark" : "transparent"
   );
@@ -20,10 +24,16 @@ const ContainerCards = ({ navigation, recipes }) => {
       : setBackground("transparent");
     console.log(scheme);
   });
+  function loadMore(){
+    console.log("test")
+    setCpt(cpt+1)
+    console.log(cpt)
+    console.log(String.fromCodePoint('a'.charCodeAt(0)+cpt))
+    dispatch(fetchRecette(String.fromCodePoint('a'.charCodeAt(0)+cpt)))
+  }
 
   return (
     <View style={[styles.container, { backgroundColor: background }]}>
-      {recipes !== null && (
         <FlatList
           data={recipes}
           numColumns={2}
@@ -38,18 +48,18 @@ const ContainerCards = ({ navigation, recipes }) => {
             </TouchableOpacity>
           )}
           keyExtractor={(_item, index) => index.toString()}
+          onEndReachedThreshold={0.5}
+          onEndReached={()=>loadMore()}
         />
-      )}
     </View>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    flexDirection: "row",
-    justifyContent: "space-evenly",
+    display:'flex',
+    alignItems: 'center',
     margin: 20,
-    flexWrap: "wrap",
   },
 });
 

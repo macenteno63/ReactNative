@@ -2,10 +2,10 @@ import axios from "axios";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import {getFavoris} from "../reducer/recetteReducer";
 
-export const fetchRecette = () => {
+export const fetchRecette = (lettre) => {
     return async (dispatch) => {
         return axios
-            .get('https://www.themealdb.com/api/json/v1/1/search.php?f=b')
+            .get('https://www.themealdb.com/api/json/v1/1/search.php?f='+lettre)
             .then((res) => {
                 dispatch({ type: "recettes/getRecette", payload: res.data.meals });
             })

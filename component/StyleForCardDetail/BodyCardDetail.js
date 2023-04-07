@@ -7,7 +7,7 @@ const BodyCardDetail = (recipe) => {
   return (
     <View style={styles.bodyCardDetailContainer}>
       <Text style={styles.instructions}>
-        Recette : {recette.strInstructions}
+        Steps : {"\n\n" + recette.strInstructions}
       </Text>
       <Text style={styles.ingredient}>Ingredients : </Text>
     </View>

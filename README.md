@@ -30,5 +30,5 @@ Cette application utilise l'API themealdb pour récupérer les données de recet
 
 ### Contribution
 
-* **Centeno Matéo**
-* **Boileau Nathan**
+* **Centeno Matéo** : https://github.com/macenteno63
+* **Boileau Nathan** : https://github.com/Feennrir
